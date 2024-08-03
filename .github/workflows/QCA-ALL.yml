@@ -3,9 +3,9 @@ name: QCA-ALL
 
 #CI计划
 on:
-  #自动编译：每天早上4点
+  #自动编译：每周一早四点
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 4 * * 1
   #手动编译
   workflow_dispatch:
     inputs:
@@ -30,7 +30,7 @@ jobs:
       fail-fast: false
       #max-parallel: 3
       matrix:
-        TARGET: [IPQ60XX-WIFI-YES, IPQ60XX-WIFI-NO, IPQ807X-WIFI-YES, IPQ807X-WIFI-NO]
+        TARGET: [IPQ60XX-WIFI-YES, IPQ807X-WIFI-YES]
         SOURCE: [VIKINGYFY/immortalwrt]
 
     #调用公用编译核心WRT-CORE.yml
@@ -39,11 +39,11 @@ jobs:
       #编译平台
       WRT_TARGET: ${{matrix.TARGET}}
       #默认主题
-      WRT_THEME: argon
+      WRT_THEME: design
       #默认主机名
-      WRT_NAME: OWRT
+      WRT_NAME: MWRT
       #默认WIFI名
-      WRT_WIFI: OWRT
+      WRT_WIFI: MWRT
       #默认地址
       WRT_IP: 192.168.10.1
       #默认密码，仅作提示，修改无用

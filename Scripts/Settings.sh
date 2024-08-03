@@ -36,10 +36,10 @@ if [ -n "$WRT_PACKAGE" ]; then
 	echo "$WRT_PACKAGE" >> ./.config
 fi
 
-#高通平台锁定512M内存
+#高通平台锁定1G内存
 if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_512M=y" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_1G=y" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_512M=n" >> ./.config
 fi
 
 #科学插件设置
@@ -52,4 +52,6 @@ else
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
+		echo "CONFIG_PACKAGE_luci-app-daed=y" >> ./.config
 fi
