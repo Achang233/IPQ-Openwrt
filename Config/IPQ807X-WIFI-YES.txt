@@ -15,7 +15,10 @@ CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq807x_DEVICE_xiaomi_ax3600-stock="ipq
 CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq807x_DEVICE_xiaomi_ax3600="ipq-wifi-xiaomi_ax3600"
 CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq807x_DEVICE_xiaomi_ax9000="ipq-wifi-xiaomi_ax9000"
 #WIFI驱动
+#WIFI驱动
 CONFIG_PACKAGE_kmod-ath11k=y
 CONFIG_PACKAGE_kmod-ath11k-ahb=y
 CONFIG_PACKAGE_kmod-ath11k-pci=y
 CONFIG_PACKAGE_ath11k-firmware-ipq8074=y
+CONFIG_PACKAGE_ath11k-firmware-qcn9074=y
+
